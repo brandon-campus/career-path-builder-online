@@ -17,12 +17,12 @@ const About = () => {
               <div className="md:w-1/3">
                 <img 
                   src="https://randomuser.me/api/portraits/women/44.jpg" 
-                  alt="Nombre del Influencer" 
+                  alt="Hernan Lamanna" 
                   className="rounded-full w-64 h-64 object-cover border-4 border-white shadow-xl mx-auto"
                 />
               </div>
               <div className="md:w-2/3 text-center md:text-left">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">Laura Martínez</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">Hernan Lamanna</h1>
                 <p className="text-xl mb-6">Especialista en Empleabilidad y Desarrollo Profesional</p>
                 <div className="flex space-x-4 justify-center md:justify-start mb-6">
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 p-2 rounded-full hover:bg-blue-100 transition-colors">
@@ -36,7 +36,7 @@ const About = () => {
                   </a>
                 </div>
                 <p className="text-blue-100">
-                  Ex-reclutadora con +12 años de experiencia en selección de talento y desarrollo profesional.
+                  Ex-reclutador con +12 años de experiencia en selección de talento y desarrollo profesional.
                 </p>
               </div>
             </div>
@@ -51,13 +51,13 @@ const About = () => {
               
               <div className="space-y-6 text-gray-700">
                 <p>
-                  Mi nombre es Laura Martínez y soy especialista en empleabilidad con más de 12 años de experiencia en el campo de recursos humanos y selección de personal. Durante mi carrera como reclutadora en importantes empresas del sector tecnológico y consultoría, he entrevistado a más de 3.000 profesionales y he revisado más de 15.000 CV.
+                  Mi nombre es Hernan Lamanna y soy especialista en empleabilidad con más de 12 años de experiencia en el campo de recursos humanos y selección de personal. Durante mi carrera como reclutador en importantes empresas del sector tecnológico y consultoría, he entrevistado a más de 3.000 profesionales y he revisado más de 15.000 CV.
                 </p>
                 <p>
                   A lo largo de los años, observé un patrón consistente: profesionales talentosos y capacitados que no conseguían avanzar en procesos de selección debido a errores evitables en sus CV, perfiles de LinkedIn o preparación para entrevistas. Esta realidad me llevó a querer cambiar de perspectiva y ayudar a los candidatos a presentar su mejor versión profesional.
                 </p>
                 <p>
-                  En 2019 dejé mi puesto como directora de talento en una multinacional para dedicarme completamente a ayudar a profesionales a mejorar su empleabilidad y conseguir las oportunidades que realmente merecen. Desde entonces, he asesorado a más de 500 profesionales que han logrado avanzar significativamente en sus carreras.
+                  En 2019 dejé mi puesto como director de talento en una multinacional para dedicarme completamente a ayudar a profesionales a mejorar su empleabilidad y conseguir las oportunidades que realmente merecen. Desde entonces, he asesorado a más de 500 profesionales que han logrado avanzar significativamente en sus carreras.
                 </p>
                 <p>
                   Mi enfoque combina el conocimiento interno de los procesos de selección con estrategias prácticas y actualizadas, adaptadas a cada sector y nivel profesional. Me apasiona especialmente ayudar a profesionales en transición de carrera y a aquellos que buscan dar un salto cualitativo en su trayectoria.
@@ -110,7 +110,7 @@ const About = () => {
                   <div className="absolute -left-12 bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center">
                     <FileText className="text-white" size={16} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800">Directora de Talento</h3>
+                  <h3 className="text-xl font-bold text-gray-800">Director de Talento</h3>
                   <p className="text-lg text-blue-600 mb-2">TechGlobal Corp. (2016-2019)</p>
                   <p className="text-gray-600">
                     Dirección del departamento de adquisición de talento para Europa. Responsable de más de 500 contrataciones anuales, desarrollo de programas de selección y formación de equipos de reclutamiento.
