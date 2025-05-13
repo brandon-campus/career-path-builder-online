@@ -1,5 +1,5 @@
 
-// --- Variables principales adaptadas a la nueva paleta ---
+/* --- Variables principales adaptadas a la nueva paleta --- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,4 +99,3 @@
   box-shadow: 0 0 15px rgba(182, 140, 255, 0.38);
   transition: box-shadow 0.3s ease;
 }
-
