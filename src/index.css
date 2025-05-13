@@ -1,66 +1,71 @@
 
-/* --- Variables principales adaptadas a la nueva paleta --- */
+/* --- Paleta oficial de la marca: #66CCFF (azul), #B68CFF (violeta), #FFFFFF (blanco) --- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;             /* #FFFFFF */
-    --foreground: 240 10% 3.9%;
-
-    --card: 0 0% 100%;                   /* #FFFFFF */
-    --card-foreground: 224 71% 4%;
+    --background: 0 0% 100%;                 /* #FFFFFF */
+    --foreground: 263 70% 28%;               /* Un violeta oscuro derivado de #B68CFF */
+    --card: 0 0% 100%;                       /* #FFFFFF */
+    --card-foreground: 263 70% 28%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
+    --popover-foreground: 263 70% 28%;
 
-    --primary: 196 100% 70%;             /* #66CCFF */
-    --primary-foreground: 0 0% 100%;     /* #FFFFFF */
+    --primary: 196 100% 70%;                 /* #66CCFF */
+    --primary-foreground: 0 0% 100%;         /* #FFFFFF */
 
-    --secondary: 263 85% 76%;            /* #B68CFF */
-    --secondary-foreground: 0 0% 100%;   /* #FFFFFF o el mismo violeta oscuro */
+    --secondary: 263 85% 76%;                /* #B68CFF */
+    --secondary-foreground: 0 0% 100%;       /* #FFFFFF */
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 263 85% 76%;                   /* #B68CFF, acentos violetas */
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 196 100% 80%;               /* Un azul más suave */
-    --accent-foreground: 240 10% 20%;
+    --muted: 196 100% 95%;                   /* Azul muy clarito para áreas apagadas */
+    --muted-foreground: 263 70% 35%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 100% 50%;               /* Rojo puro para errores, intocado */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 196 100% 85%;              /* Un azul claro para borders */
-    --input: 263 85% 90%;                /* Un violeta muy suave */
-    --ring: 263 85% 76%;                 /* Violeta para foco */
+    --border: 263 85% 90%;                   /* Bordes violetas muy suaves */
+    --input: 196 100% 96%;                   /* Azul súper suave para inputs */
+    --ring: 196 100% 70%;                    /* Azul para focus */
 
     --radius: 0.6rem;
   }
 
   .dark {
-    --background: 263 40% 14%;
+    --background: 263 40% 16%;               /* Violeta profundo */
     --foreground: 0 0% 100%;
-    --card: 263 42% 19%;
+    --card: 263 42% 22%;                     /* Violeta oscuro */
     --card-foreground: 0 0% 100%;
-    --popover: 263 42% 19%;
+    --popover: 263 42% 22%;
     --popover-foreground: 0 0% 100%;
-    --primary: 196 100% 65%;              /* Blue shade para modo oscuro */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 263 85% 42%;             /* Violeta oscuro */
-    --secondary-foreground: 0 0% 100%;
-    --muted: 263 42% 22%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 263 100% 60%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 35%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 263 85% 34%;
-    --input: 263 85% 28%;
-    --ring: 196 100% 65%;
-  }
-}
 
-@layer base {
+    --primary: 196 100% 70%;                 /* #66CCFF sigue siendo el primario */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 263 85% 76%;                /* #B68CFF igual en dark */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 263 85% 76%;                   /* #B68CFF */
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 263 45% 28%;                   /* Violeta súper oscuro para mute */
+    --muted-foreground: 196 100% 80%;
+
+    --destructive: 0 80% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 263 60% 36%;
+    --input: 196 100% 15%;                  /* Azul oscuro para inputs */
+    --ring: 196 100% 70%;
+
+    --radius: 0.6rem;
+  }
+
   * {
     @apply border-border;
   }
@@ -73,29 +78,19 @@
     @apply font-heading font-semibold tracking-tight;
   }
 
-  h1 {
-    @apply text-4xl md:text-5xl;
-  }
-  h2 {
-    @apply text-3xl md:text-4xl;
-  }
-  h3 {
-    @apply text-2xl md:text-3xl;
-  }
-  h4 {
-    @apply text-xl md:text-2xl;
-  }
-  .container {
-    @apply px-4 md:px-6;
-  }
+  h1 {@apply text-4xl md:text-5xl;}
+  h2 {@apply text-3xl md:text-4xl;}
+  h3 {@apply text-2xl md:text-3xl;}
+  h4 {@apply text-xl md:text-2xl;}
+  .container {@apply px-4 md:px-6;}
 }
 
+/* Efectos para botones */
 .button-glow:hover {
-  box-shadow: 0 0 15px rgba(102, 204, 255, 0.5);
+  box-shadow: 0 0 15px rgba(102, 204, 255, 0.35); /* #66CCFF */
   transition: box-shadow 0.3s ease;
 }
-
 .button-blue-glow:hover {
-  box-shadow: 0 0 15px rgba(182, 140, 255, 0.38);
+  box-shadow: 0 0 15px rgba(182, 140, 255, 0.35); /* #B68CFF */
   transition: box-shadow 0.3s ease;
 }

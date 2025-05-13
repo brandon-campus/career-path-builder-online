@@ -59,29 +59,28 @@ export default {
           white: "#FFFFFF"
         },
         blue: {
-          // Escala de azules basada en #66CCFF, del más claro al más oscuro
-          50: '#ebf8fe',
-          100: '#d4f0fc',
-          200: '#b1e3fa',
-          300: '#8fd7f7',
-          400: '#6ccaf5',
+          50: '#e7f8fe',
+          100: '#cdefff',
+          200: '#a3e0fa',
+          300: '#7bd3f4',
+          400: '#53c6ef',
           500: '#66CCFF',    // principal
-          600: '#2db7eb',
-          700: '#0fa2c8',
-          800: '#087796',
-          900: '#06465a',
+          600: '#36aed3',
+          700: '#238ba5',
+          800: '#166377',
+          900: '#062c36',
         },
         purple: {
-          50: "#f6f0fe",
-          100: "#ecddfc",
-          200: "#dfc3fa",
-          300: "#d0a8f6",
-          400: "#c389f4",
+          50: "#f8f3ff",
+          100: "#f2e8ff",
+          200: "#e6d2fe",
+          300: "#dabcfb",
+          400: "#cca1fa",
           500: "#B68CFF",    // principal
-          600: "#9570e2",
-          700: "#7255ac",
-          800: "#543f89",
-          900: "#3c295f",
+          600: "#8f6dcc",
+          700: "#664d99",
+          800: "#443566",
+          900: "#241833",
         },
       },
       fontFamily: {
@@ -121,4 +120,3 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-
