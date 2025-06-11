@@ -1,7 +1,6 @@
-
 import HeroSection from '@/components/home/HeroSection';
 import ServicesSection from '@/components/home/ServicesSection';
-import CoursesSection from '@/components/home/CoursesSection';
+// import CoursesSection from '@/components/home/CoursesSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import BlogSection from '@/components/home/BlogSection';
 import CTASection from '@/components/home/CTASection';
@@ -15,7 +14,7 @@ const Index = () => {
       <main className="flex-grow">
         <HeroSection />
         <ServicesSection />
-        <CoursesSection />
+        {/* <CoursesSection /> */}
         <TestimonialsSection />
         <BlogSection />
         <CTASection />

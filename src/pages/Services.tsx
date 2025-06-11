@@ -1,4 +1,3 @@
-
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,85 +8,114 @@ import { FileText, Linkedin, Users, BookOpen, Calendar } from 'lucide-react';
 const serviceItems = [
   {
     id: 1,
-    title: 'Creación de CV Profesional',
-    description: 'Desarrollamos un CV optimizado para sistemas ATS, visualmente atractivo y estratégicamente estructurado para destacar tus logros y habilidades más relevantes.',
+    title: 'CV Profesional TIPO HARVARD',
+    description: 'CV profesional optimizado con formato Harvard, ideal para destacar en procesos de selección.',
     features: [
-      'Análisis personalizado de tu trayectoria profesional',
-      'Diseño moderno y adaptado a tu sector',
-      'Optimización de palabras clave para ATS',
-      'Formato adaptado a estándares internacionales',
-      'Versiones en Word y PDF editables'
+      'Guía de Trabajo 2025 con enlaces a portales y agencias reales',
+      '50 preguntas de entrevista + respuestas',
+      'Tips para optimizar tu perfil de LinkedIn',
+      'Formato entregado en Word y PDF',
+      'Estructura profesional y prolija'
     ],
     icon: <FileText className="h-12 w-12 text-blue-600" />,
-    price: '89€',
+    price: '$16.000',
     link: '/contacto',
-    buttonText: 'Solicitar servicio'
+    buttonText: 'Solicitar servicio',
+    deliveryTime: '5 a 7 días hábiles',
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil'
   },
   {
     id: 2,
-    title: 'Optimización de LinkedIn',
-    description: 'Potenciamos tu perfil de LinkedIn para aumentar tu visibilidad, generar conexiones de calidad y atraer a reclutadores de tu sector.',
+    title: 'CV Profesional CON DISEÑO',
+    description: 'CV profesional con diseño moderno y atractivo, perfecto para destacar visualmente.',
     features: [
-      'Optimización SEO del titular y resumen',
-      'Estrategia de contenido para tu feed',
-      'Mejora de experiencia y logros destacados',
-      'Recomendaciones para foto y banner profesionales',
-      'Guía de networking efectivo'
+      'Guía de Trabajo 2025 con enlaces a portales y agencias reales',
+      '50 preguntas de entrevista + respuestas',
+      'Tips para optimizar tu perfil de LinkedIn',
+      'Formato entregado en PDF con diseño y foto',
+      'Estructura profesional y visualmente atractiva'
     ],
-    icon: <Linkedin className="h-12 w-12 text-blue-600" />,
-    price: '99€',
+    icon: <FileText className="h-12 w-12 text-blue-600" />,
+    price: '$17.000',
     link: '/contacto',
-    buttonText: 'Solicitar servicio'
+    buttonText: 'Solicitar servicio',
+    deliveryTime: '5 a 7 días hábiles',
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil'
   },
   {
     id: 3,
-    title: 'Asesoría Personalizada',
-    description: 'Sesiones individuales donde diseñamos juntos una estrategia integral para tu búsqueda laboral y desarrollo profesional.',
+    title: 'Armado de LinkedIn Profesional',
+    description: 'Optimización completa de tu perfil de LinkedIn para atraer reclutadores y oportunidades.',
     features: [
-      'Evaluación completa de tu perfil profesional',
-      'Estrategia de búsqueda de empleo personalizada',
-      'Preparación para entrevistas laborales',
-      'Plan de acción con objetivos medibles',
-      'Seguimiento y ajuste de estrategia (1 mes)'
+      'Perfil optimizado al 100%',
+      'Foto de perfil y portada profesional',
+      'Guía en PDF con estrategias para mejorar tu búsqueda laboral',
+      'Optimización SEO del perfil',
+      'Estrategias de networking efectivo'
     ],
-    icon: <Users className="h-12 w-12 text-blue-600" />,
-    price: '149€',
+    icon: <Linkedin className="h-12 w-12 text-blue-600" />,
+    price: '$17.000',
     link: '/contacto',
-    buttonText: 'Agendar asesoría'
+    buttonText: 'Solicitar servicio',
+    deliveryTime: '7 a 10 días hábiles',
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil'
   },
   {
     id: 4,
-    title: 'Cursos Online',
-    description: 'Aprende a tu ritmo con nuestros cursos especializados en empleabilidad, LinkedIn, entrevistas y más. Material actualizado y práctico.',
+    title: 'Combo CV + LinkedIn',
+    description: 'La solución integral que incluye CV profesional y optimización completa de LinkedIn.',
     features: [
-      'Acceso ilimitado al contenido',
-      'Ejercicios prácticos y plantillas',
-      'Certificado de finalización',
-      'Foro de consultas con respuestas en 24h',
-      'Actualizaciones incluidas'
+      'CV profesional optimizado (Diseño moderno o formato ATS)',
+      'Perfil de LinkedIn optimizado',
+      'Guía de trabajo 2025 con 50 preguntas de entrevistas y respuestas',
+      '50 enlaces directos a empresas y portales de empleo',
+      'Mini guía de publicaciones en LinkedIn',
+      'Acceso al taller gratuito de LinkedIn'
     ],
-    icon: <BookOpen className="h-12 w-12 text-blue-600" />,
-    price: 'Desde 49.99€',
-    link: '/cursos',
-    buttonText: 'Ver cursos'
+    icon: <Calendar className="h-12 w-12 text-blue-600" />,
+    price: '$30.000',
+    originalPrice: '$34.000',
+    link: '/contacto',
+    buttonText: 'Solicitar combo',
+    deliveryTime: '2 semanas',
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil'
   },
   {
     id: 5,
-    title: 'Pack Completo',
-    description: 'La solución integral que incluye CV profesional, optimización de LinkedIn, asesoría personalizada y acceso a un curso a elección.',
+    title: 'Combo: CV + 2 portales de empleo',
+    description: 'CV profesional más optimización de perfiles en dos portales de empleo de tu elección.',
     features: [
-      'Todo lo incluido en los servicios individuales',
-      'Estrategia coordinada entre CV y LinkedIn',
-      'Dos sesiones de asesoría personalizada',
-      'Un curso online a elección',
-      '30% de descuento vs. servicios por separado'
+      'CV optimizado',
+      'Creación y optimización de perfiles en 2 portales de empleo',
+      'Opciones: Bumeran, Computrabajo, Randstad, Zonajobs, Indeed',
+      'Guía de uso de los portales',
+      'Estrategias de postulación efectiva'
     ],
-    icon: <Calendar className="h-12 w-12 text-blue-600" />,
-    price: '249€',
+    icon: <Users className="h-12 w-12 text-blue-600" />,
+    price: '$41.000',
     link: '/contacto',
-    buttonText: 'Solicitar pack'
+    buttonText: 'Solicitar combo',
+    deliveryTime: '7 a 10 días hábiles',
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil'
   }
 ];
+
+function getServiceDetailLink(title: string) {
+  switch (title) {
+    case 'CV Profesional TIPO HARVARD':
+      return '/servicios/cv-harvard';
+    case 'CV Profesional CON DISEÑO':
+      return '/servicios/cv-diseno';
+    case 'Armado de LinkedIn Profesional':
+      return '/servicios/linkedin';
+    case 'Combo CV + LinkedIn':
+      return '/servicios/combo-cv-linkedin';
+    case 'Combo: CV + 2 portales de empleo':
+      return '/servicios/combo-cv-portales';
+    default:
+      return '/servicios';
+  }
+}
 
 const Services = () => {
   return (
@@ -138,9 +166,14 @@ const Services = () => {
                     </ul>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                      <Link to={service.link} className="w-full">{service.buttonText}</Link>
-                    </Button>
+                    <div className="flex flex-col gap-2 w-full">
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                        <Link to={service.link} className="w-full">{service.buttonText}</Link>
+                      </Button>
+                      <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
+                        <Link to={getServiceDetailLink(service.title)} className="w-full">Ver Servicio</Link>
+                      </Button>
+                    </div>
                   </CardFooter>
                 </Card>
               ))}

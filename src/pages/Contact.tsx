@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -133,10 +132,11 @@ const Contact = () => {
                             <SelectValue placeholder="Selecciona un servicio" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="cv">Creación de CV Profesional</SelectItem>
-                            <SelectItem value="linkedin">Optimización de LinkedIn</SelectItem>
-                            <SelectItem value="asesoria">Asesoría Personalizada</SelectItem>
-                            <SelectItem value="cursos">Cursos Online</SelectItem>
+                            <SelectItem value="cv-harvard">CV Profesional TIPO HARVARD</SelectItem>
+                            <SelectItem value="cv-diseno">CV Profesional CON DISEÑO</SelectItem>
+                            <SelectItem value="linkedin">Armado de LinkedIn Profesional</SelectItem>
+                            <SelectItem value="combo-cv-linkedin">Combo CV + LinkedIn</SelectItem>
+                            <SelectItem value="combo-cv-portales">Combo: CV + 2 portales de empleo</SelectItem>
                             <SelectItem value="otro">Otro</SelectItem>
                           </SelectContent>
                         </Select>

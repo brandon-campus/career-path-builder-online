@@ -1,5 +1,4 @@
-
-import { ArrowRight, FileText, Linkedin, Users } from 'lucide-react';
+import { ArrowRight, FileText, Linkedin, Users, Calendar, Globe } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -7,24 +6,38 @@ import { Link } from 'react-router-dom';
 const serviceItems = [
   {
     id: 1,
-    title: 'Creación de CV Profesional',
-    description: 'Creamos un CV optimizado para ATS, visualmente atractivo y enfocado en destacar tus logros profesionales.',
+    title: 'CV Profesional TIPO HARVARD',
+    description: 'CV profesional optimizado con formato Harvard, ideal para destacar en procesos de selección.',
     icon: <FileText className="h-10 w-10 text-blue-600" />,
-    link: '/servicios/cv-profesional'
+    link: '/servicios/cv-harvard'
   },
   {
     id: 2,
-    title: 'Optimización de LinkedIn',
-    description: 'Potenciamos tu perfil para aumentar tu visibilidad, generar conexiones de calidad y atraer reclutadores.',
+    title: 'CV Profesional CON DISEÑO',
+    description: 'CV profesional con diseño moderno y atractivo, perfecto para destacar visualmente.',
+    icon: <FileText className="h-10 w-10 text-blue-600" />,
+    link: '/servicios/cv-diseno'
+  },
+  {
+    id: 3,
+    title: 'Armado de LinkedIn Profesional',
+    description: 'Optimización completa de tu perfil de LinkedIn para atraer reclutadores y oportunidades.',
     icon: <Linkedin className="h-10 w-10 text-blue-600" />,
     link: '/servicios/linkedin'
   },
   {
-    id: 3,
-    title: 'Asesoría Personalizada',
-    description: 'Sesiones individuales donde diseñamos juntos una estrategia efectiva para tu búsqueda laboral.',
-    icon: <Users className="h-10 w-10 text-blue-600" />,
-    link: '/servicios/asesoria'
+    id: 4,
+    title: 'Combo CV + LinkedIn',
+    description: 'La solución integral que incluye CV profesional y optimización completa de LinkedIn.',
+    icon: <Calendar className="h-10 w-10 text-blue-600" />,
+    link: '/servicios/combo-cv-linkedin'
+  },
+  {
+    id: 5,
+    title: 'Combo: CV + 2 portales de empleo',
+    description: 'CV profesional más optimización de perfiles en dos portales de empleo de tu elección.',
+    icon: <Globe className="h-10 w-10 text-blue-600" />,
+    link: '/servicios/combo-cv-portales'
   }
 ];
 

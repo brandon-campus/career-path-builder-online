@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -36,18 +35,18 @@ const courses = [
 
 const CoursesSection = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-background">
       <div className="container mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-800">Cursos Online</h2>
-          <p className="text-lg text-gray-600">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Cursos Online</h2>
+          <p className="text-lg text-foreground">
             Aprende a tu ritmo con nuestros cursos especializados en empleabilidad y desarrollo profesional.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {courses.map((course) => (
-            <Card key={course.id} className="overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-lg h-full flex flex-col">
+            <Card key={course.id} className="overflow-hidden border border-border transition-all duration-300 hover:shadow-lg h-full flex flex-col">
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src={course.image} 
@@ -61,18 +60,18 @@ const CoursesSection = () => {
                 )}
               </div>
               <CardHeader>
-                <CardTitle className="text-xl font-bold">{course.title}</CardTitle>
-                <CardDescription className="text-blue-600 font-medium text-lg">
+                <CardTitle className="text-xl font-bold text-secondary">{course.title}</CardTitle>
+                <CardDescription className="text-primary font-medium text-lg">
                   €{course.price}
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
-                <p className="text-gray-600">
+                <p className="text-foreground">
                   {course.description}
                 </p>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                <Button className="w-full bg-primary hover:bg-secondary">
                   <Link to={course.link}>Comprar curso</Link>
                 </Button>
               </CardFooter>
@@ -81,7 +80,7 @@ const CoursesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button className="bg-blue-600 hover:bg-blue-700 button-blue-glow">
+          <Button className="bg-primary hover:bg-secondary button-glow">
             <Link to="/cursos">Ver todos los cursos</Link>
           </Button>
         </div>
