@@ -31,17 +31,17 @@ const HeroSection = () => {
               <img
                 src="https://randomuser.me/api/portraits/women/44.jpg"
                 alt="Profesional 1"
-                className="w-9 h-9 rounded-full border-2 border-white dark:border-background"
+                className="w-9 h-9 rounded-full border-2 border-white"
               />
               <img
                 src="https://randomuser.me/api/portraits/men/86.jpg"
                 alt="Profesional 2"
-                className="w-9 h-9 rounded-full border-2 border-white dark:border-background"
+                className="w-9 h-9 rounded-full border-2 border-white"
               />
               <img
                 src="https://randomuser.me/api/portraits/women/33.jpg"
                 alt="Profesional 3"
-                className="w-9 h-9 rounded-full border-2 border-white dark:border-background"
+                className="w-9 h-9 rounded-full border-2 border-white"
               />
             </div>
             <p className="text-foreground text-sm md:text-base">
