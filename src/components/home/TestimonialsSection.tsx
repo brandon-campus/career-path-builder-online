@@ -1,56 +1,36 @@
-import { useState, useRef, useEffect } from 'react';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowLeft, ArrowRight, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const testimonials = [
-  {
-    id: 1,
-    name: 'Laura Martínez',
-    position: 'Especialista en Marketing Digital',
-    image: 'https://randomuser.me/api/portraits/women/44.jpg',
-    text: 'Gracias a la asesoría en CV y LinkedIn, conseguí entrevistas en empresas donde antes nunca me habían contactado. En menos de un mes tenía 3 ofertas de trabajo. ¡La mejor inversión en mi carrera!',
-    rating: 5
-  },
-  {
-    id: 2,
-    name: 'Carlos Rodríguez',
-    position: 'Desarrollador Frontend',
-    image: 'https://randomuser.me/api/portraits/men/86.jpg',
-    text: 'El curso de LinkedIn fue revelador. Implementé las estrategias y en pocas semanas los reclutadores comenzaron a contactarme. Ahora trabajo en mi empresa soñada con un salario 30% superior.',
-    rating: 5
-  },
-  {
-    id: 3,
-    name: 'María Gómez',
-    position: 'Gerente de Recursos Humanos',
-    image: 'https://randomuser.me/api/portraits/women/33.jpg',
-    text: 'Como profesional de RRHH, puedo asegurar que los consejos y técnicas enseñados son exactamente lo que buscamos los reclutadores. Mi CV ahora destaca entre cientos y he mejorado mi tasa de entrevistas.',
-    rating: 5
-  },
-  {
-    id: 4,
-    name: 'Antonio López',
-    position: 'Analista de Datos',
-    image: 'https://randomuser.me/api/portraits/men/54.jpg',
-    text: 'Después de 6 meses buscando trabajo sin éxito, contraté el servicio de asesoría personalizada. La estrategia fue completamente diferente a lo que hacía y en 3 semanas ya estaba firmando contrato.',
-    rating: 5
-  },
-  {
-    id: 5,
-    name: 'Elena Torres',
-    position: 'Arquitecta de Software',
-    image: 'https://randomuser.me/api/portraits/women/66.jpg',
-    text: 'El enfoque en logros cuantificables revolucionó mi CV. Las técnicas para entrevistas me dieron la confianza que necesitaba. Ahora tengo un trabajo remoto y bien pagado en una empresa internacional.',
-    rating: 5
-  }
+const testimonialImages = [
+  "/drive-download-20250617T193555Z-1-001/IMG_3816.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3818.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3814.PNG",
+  "/drive-download-20250617T193555Z-1-001/651539e1-c4ac-4ed0-b0e1-c4dbbc1d9ad5.JPG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3616.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3819.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3822.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3821.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3817.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3824.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3820.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_0025.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3815.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3813.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3812.PNG",
+  "/drive-download-20250617T193555Z-1-001/8f91ddba-e39b-4203-a011-94202aa1b2e2.jpg",
+  "/drive-download-20250617T193555Z-1-001/IMG_3823.PNG",
+  "/drive-download-20250617T193555Z-1-001/IMG_3588.PNG"
 ];
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [translateValue, setTranslateValue] = useState(0);
-  const slideRef = useRef<HTMLDivElement>(null);
   const [slidesToShow, setSlidesToShow] = useState(3);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImg, setModalImg] = useState<string | null>(null);
+  const [zoomed, setZoomed] = useState(false);
+  const [drag, setDrag] = useState({ x: 0, y: 0 });
+  const [dragStart, setDragStart] = useState<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,21 +42,13 @@ const TestimonialsSection = () => {
         setSlidesToShow(3);
       }
     };
-
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    if (slideRef.current) {
-      const slideWidth = slideRef.current.clientWidth;
-      setTranslateValue(-currentIndex * (slideWidth + 32)); // 32px is the gap
-    }
-  }, [currentIndex, slidesToShow]);
-
   const nextSlide = () => {
-    if (currentIndex < testimonials.length - slidesToShow) {
+    if (currentIndex < testimonialImages.length - slidesToShow) {
       setCurrentIndex(currentIndex + 1);
     } else {
       setCurrentIndex(0);
@@ -87,24 +59,53 @@ const TestimonialsSection = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     } else {
-      setCurrentIndex(testimonials.length - slidesToShow);
+      setCurrentIndex(testimonialImages.length - slidesToShow);
     }
   };
 
-  // Renderizar estrellas basado en el rating
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }).map((_, i) => (
-      <svg 
-        key={i} 
-        className={`w-5 h-5 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
-        fill="currentColor" 
-        viewBox="0 0 20 20" 
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-      </svg>
-    ));
+  const openModal = (img: string) => {
+    setModalImg(img);
+    setModalOpen(true);
+    setZoomed(false);
+    setDrag({ x: 0, y: 0 });
+    setDragStart(null);
   };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setModalImg(null);
+    setZoomed(false);
+    setDrag({ x: 0, y: 0 });
+    setDragStart(null);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+    if (!zoomed) return;
+    setDragStart({ x: e.clientX - drag.x, y: e.clientY - drag.y });
+    document.body.style.cursor = 'grabbing';
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    if (dragStart && zoomed) {
+      setDrag({ x: e.clientX - dragStart.x, y: e.clientY - dragStart.y });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setDragStart(null);
+    document.body.style.cursor = '';
+  };
+
+  useEffect(() => {
+    if (dragStart && zoomed) {
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mouseup', handleMouseUp);
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('mouseup', handleMouseUp);
+      };
+    }
+  }, [dragStart, zoomed]);
 
   return (
     <section className="py-16 bg-white">
@@ -115,41 +116,25 @@ const TestimonialsSection = () => {
             Historias reales de profesionales que han transformado su carrera con nuestros servicios.
           </p>
         </div>
-
         <div className="relative overflow-hidden px-4">
-          <div 
-            className="flex transition-transform duration-300 ease-out"
-            style={{ transform: `translateX(${translateValue}px)` }}
-          >
-            {testimonials.map((testimonial) => (
-              <div 
-                key={testimonial.id} 
-                ref={slideRef}
-                className="min-w-[calc(100%-2rem)] md:min-w-[calc(50%-2rem)] lg:min-w-[calc(33.333%-2rem)] px-4"
+          <div className="flex transition-transform duration-300 ease-out"
+            style={{ transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)` }}>
+            {testimonialImages.map((img, idx) => (
+              <div
+                key={idx}
+                className="min-w-[calc(100%/3)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)] px-4 flex justify-center"
+                style={{ maxWidth: '400px' }}
               >
-                <Card className="h-full border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-                  <CardContent className="pt-6">
-                    <div className="flex items-center mb-4">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="w-12 h-12 rounded-full mr-4 object-cover"
-                      />
-                      <div>
-                        <h4 className="font-semibold text-lg">{testimonial.name}</h4>
-                        <p className="text-gray-600 text-sm">{testimonial.position}</p>
-                      </div>
-                    </div>
-                    <div className="flex mb-4">
-                      {renderStars(testimonial.rating)}
-                    </div>
-                    <p className="text-gray-700 italic">"{testimonial.text}"</p>
-                  </CardContent>
-                </Card>
+                <img
+                  src={img}
+                  alt={`Testimonio ${idx + 1}`}
+                  className="rounded-xl shadow-md object-cover w-full h-80 cursor-pointer hover:scale-105 transition-transform"
+                  loading="lazy"
+                  onClick={() => openModal(img)}
+                />
               </div>
             ))}
           </div>
-
           <Button
             variant="outline"
             size="icon"
@@ -168,6 +153,40 @@ const TestimonialsSection = () => {
           </Button>
         </div>
       </div>
+      {modalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div className="relative max-w-3xl w-full flex justify-center" onClick={e => e.stopPropagation()}>
+            <button
+              className="absolute top-2 right-2 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-80 z-10"
+              onClick={closeModal}
+              aria-label="Cerrar"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <img
+              src={modalImg!}
+              alt="Testimonio ampliado"
+              className={`rounded-xl shadow-2xl max-h-[80vh] w-auto object-contain transition-transform duration-300 ${zoomed ? 'scale-150 cursor-zoom-out' : 'scale-100 cursor-zoom-in'}`}
+              style={{
+                transition: 'transform 0.3s',
+                transform: `${zoomed ? `scale(1.5) translate(${drag.x}px, ${drag.y}px)` : 'scale(1) translate(0,0)'}`
+              }}
+              onClick={() => {
+                if (zoomed) {
+                  setZoomed(false);
+                  setDrag({ x: 0, y: 0 });
+                } else {
+                  setZoomed(true);
+                }
+              }}
+              onMouseDown={handleMouseDown}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

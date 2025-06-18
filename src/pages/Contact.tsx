@@ -21,6 +21,16 @@ import {
 import { toast } from 'sonner';
 import { Mail, Phone, Linkedin, Instagram, Youtube } from 'lucide-react';
 
+// Añade este componente para el icono de TikTok
+const TiktokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="none" {...props}>
+    <g>
+      <path d="M21.5 2v4.5c0 2.5 2 4.5 4.5 4.5h2V16c0 6.6-5.4 12-12 12S4 22.6 4 16 9.4 4 16 4h5.5z" fill="#000"/>
+      <path d="M28 10.5c-2.5 0-4.5-2-4.5-4.5H21.5V22c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.2 0 .5 0 .7.1v4.1c-.2-.1-.5-.2-.7-.2-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2V2h4.5c0 2.5 2 4.5 4.5 4.5V10.5z" fill="#fff"/>
+    </g>
+  </svg>
+);
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -177,7 +187,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                        <p className="text-gray-700">info@careerboost.com</p>
+                        <p className="text-gray-700">Ayudartear@gmail.com</p>
                         <p className="text-sm text-gray-500 mt-1">Respondemos en menos de 24 horas</p>
                       </div>
                     </div>
@@ -188,7 +198,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">Teléfono</h3>
-                        <p className="text-gray-700">+34 912 456 789</p>
+                        <p className="text-gray-700">1131985450</p>
                         <p className="text-sm text-gray-500 mt-1">Lunes a viernes, 9:00 - 18:00</p>
                       </div>
                     </div>
@@ -199,35 +209,46 @@ const Contact = () => {
                   <h2 className="text-2xl font-bold text-blue-800 mb-6">Síguenos en redes sociales</h2>
                   
                   <div className="space-y-6">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-start hover:bg-blue-50 p-4 rounded-lg transition-colors">
+                    <a href="https://www.linkedin.com/in/gabriel-hernan-lamanna-b0178b192/" target="_blank" rel="noopener noreferrer" className="flex items-start hover:bg-blue-50 p-4 rounded-lg transition-colors">
                       <div className="bg-blue-100 p-3 rounded-full mr-4">
                         <Linkedin className="h-6 w-6 text-blue-600" />
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">LinkedIn</h3>
-                        <p className="text-gray-700">Laura Martínez | CareerBoost</p>
+                        <p className="text-gray-700">Gabriel Hernan Lamanna</p>
                         <p className="text-sm text-gray-500 mt-1">Consejos profesionales y novedades</p>
                       </div>
                     </a>
                     
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-start hover:bg-blue-50 p-4 rounded-lg transition-colors">
+                    <a href="https://www.instagram.com/hernilamanna/" target="_blank" rel="noopener noreferrer" className="flex items-start hover:bg-blue-50 p-4 rounded-lg transition-colors">
                       <div className="bg-blue-100 p-3 rounded-full mr-4">
                         <Instagram className="h-6 w-6 text-blue-600" />
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">Instagram</h3>
-                        <p className="text-gray-700">@careerboost_oficial</p>
+                        <p className="text-gray-700">@hernilamanna</p>
                         <p className="text-sm text-gray-500 mt-1">Tips diarios e inspiración profesional</p>
                       </div>
                     </a>
                     
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="flex items-start hover:bg-blue-50 p-4 rounded-lg transition-colors">
+                    <a href="https://www.tiktok.com/@hernilamanna" target="_blank" rel="noopener noreferrer" className="flex items-start hover:bg-blue-50 p-4 rounded-lg transition-colors">
+                      <div className="bg-blue-100 p-3 rounded-full mr-4">
+                        <TiktokIcon className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900">TikTok</h3>
+                        <p className="text-gray-700">@hernilamanna</p>
+                        <p className="text-sm text-gray-500 mt-1">Contenido profesional en video</p>
+                      </div>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/@hernanlamanna" target="_blank" rel="noopener noreferrer" className="flex items-start hover:bg-blue-50 p-4 rounded-lg transition-colors">
                       <div className="bg-blue-100 p-3 rounded-full mr-4">
                         <Youtube className="h-6 w-6 text-blue-600" />
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">YouTube</h3>
-                        <p className="text-gray-700">CareerBoost Empleo</p>
+                        <p className="text-gray-700">@hernanlamanna</p>
                         <p className="text-sm text-gray-500 mt-1">Tutoriales y charlas sobre empleabilidad</p>
                       </div>
                     </a>

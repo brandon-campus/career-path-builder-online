@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, Linkedin, Users, Calendar, Globe } from 'lucide-react';
+import { ArrowRight, FileText, Linkedin, Users, Calendar, Globe, Mail, Phone, Instagram, Youtube } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -40,6 +40,15 @@ const serviceItems = [
     link: '/servicios/combo-cv-portales'
   }
 ];
+
+const TiktokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 32 32" fill="none" {...props}>
+    <g>
+      <path d="M21.5 2v4.5c0 2.5 2 4.5 4.5 4.5h2V16c0 6.6-5.4 12-12 12S4 22.6 4 16 9.4 4 16 4h5.5z" fill="#000"/>
+      <path d="M28 10.5c-2.5 0-4.5-2-4.5-4.5H21.5V22c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.2 0 .5 0 .7.1v4.1c-.2-.1-.5-.2-.7-.2-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2V2h4.5c0 2.5 2 4.5 4.5 4.5V10.5z" fill="#fff"/>
+    </g>
+  </svg>
+);
 
 const ServicesSection = () => {
   return (

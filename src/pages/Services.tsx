@@ -19,10 +19,11 @@ const serviceItems = [
     ],
     icon: <FileText className="h-12 w-12 text-blue-600" />,
     price: '$16.000',
-    link: '/contacto',
+    link: 'https://mpago.li/29HrjUi',
     buttonText: 'Solicitar servicio',
     deliveryTime: '5 a 7 días hábiles',
-    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil'
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil',
+    mainButtonLink: 'https://mpago.li/29HrjUi'
   },
   {
     id: 2,
@@ -37,10 +38,11 @@ const serviceItems = [
     ],
     icon: <FileText className="h-12 w-12 text-blue-600" />,
     price: '$17.000',
-    link: '/contacto',
+    link: 'https://mpago.li/1euBj6a',
     buttonText: 'Solicitar servicio',
     deliveryTime: '5 a 7 días hábiles',
-    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil'
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil',
+    mainButtonLink: 'https://mpago.li/1euBj6a'
   },
   {
     id: 3,
@@ -55,10 +57,11 @@ const serviceItems = [
     ],
     icon: <Linkedin className="h-12 w-12 text-blue-600" />,
     price: '$17.000',
-    link: '/contacto',
+    link: 'https://mpago.li/1t981Xr',
     buttonText: 'Solicitar servicio',
     deliveryTime: '7 a 10 días hábiles',
-    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil'
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil',
+    mainButtonLink: 'https://mpago.li/1t981Xr'
   },
   {
     id: 4,
@@ -75,10 +78,11 @@ const serviceItems = [
     icon: <Calendar className="h-12 w-12 text-blue-600" />,
     price: '$30.000',
     originalPrice: '$34.000',
-    link: '/contacto',
+    link: 'https://mpago.li/2ahZhsp',
     buttonText: 'Solicitar combo',
     deliveryTime: '2 semanas',
-    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil'
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil',
+    mainButtonLink: 'https://mpago.li/2ahZhsp'
   },
   {
     id: 5,
@@ -93,10 +97,11 @@ const serviceItems = [
     ],
     icon: <Users className="h-12 w-12 text-blue-600" />,
     price: '$41.000',
-    link: '/contacto',
+    link: 'https://mpago.li/11fUvKR',
     buttonText: 'Solicitar combo',
     deliveryTime: '7 a 10 días hábiles',
-    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil'
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil',
+    mainButtonLink: 'https://mpago.li/11fUvKR'
   }
 ];
 
@@ -140,17 +145,19 @@ const Services = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {serviceItems.map((service) => (
                 <Card key={service.id} className="border border-gray-200 transition-all duration-300 hover:shadow-lg h-full flex flex-col">
-                  <CardHeader>
-                    <div className="flex items-center">
-                      <div className="mr-4">{service.icon}</div>
-                      <div>
-                        <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
-                        <CardDescription className="text-blue-600 text-lg font-medium mt-1">
-                          {service.price}
-                        </CardDescription>
+                  <Link to={getServiceDetailLink(service.title)} style={{ textDecoration: 'none' }}>
+                    <CardHeader className="cursor-pointer hover:bg-blue-50 transition-colors">
+                      <div className="flex items-center">
+                        <div className="mr-4">{service.icon}</div>
+                        <div>
+                          <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
+                          <CardDescription className="text-blue-600 text-lg font-medium mt-1">
+                            {service.price}
+                          </CardDescription>
+                        </div>
                       </div>
-                    </div>
-                  </CardHeader>
+                    </CardHeader>
+                  </Link>
                   <CardContent className="flex-grow">
                     <p className="text-gray-700 mb-6">{service.description}</p>
                     <h4 className="font-semibold text-lg mb-4">Incluye:</h4>

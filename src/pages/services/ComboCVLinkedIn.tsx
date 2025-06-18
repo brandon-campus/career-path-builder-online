@@ -37,6 +37,7 @@ const ComboCVLinkedIn = () => {
         "Mini guía de publicaciones en LinkedIn",
         "Acceso al taller gratuito de LinkedIn"
       ]}
+      mainButtonLink="https://mpago.li/2ahZhsp"
     >
       {/* Bloque valor añadido */}
       <section className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-xl mb-12">
@@ -93,15 +94,14 @@ const ComboCVLinkedIn = () => {
         />
         <div>
           <h3 className="text-xl font-bold text-blue-800 mb-2">Incluye: Guía de Trabajo 2025</h3>
-          <ul className="list-disc pl-6 text-blue-900 mb-2">
-            <li>50 preguntas de entrevistas con respuestas</li>
-            <li>50 enlaces directos a empresas y portales</li>
-            <li>Mini guía de publicaciones en LinkedIn</li>
-            <li>Acceso al taller gratuito de LinkedIn</li>
-          </ul>
-          <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-100 flex items-center gap-2">
-            <Download className="w-4 h-4" /> Descargar muestra
-          </Button>
+          <p className="text-blue-900 mb-2">
+            Esta guía descargable te brinda acceso directo a más oportunidades laborales con recursos prácticos y actualizados. Incluye:<br /><br />
+            ✅ 11 páginas con enlaces directos a portales de empleo, agencias de trabajo, agencias eventuales y empresas para postularte de forma inmediata y cargar tu CV sin perder tiempo.<br />
+            ✅ Guía paso a paso para optimizar tu perfil de LinkedIn: desde cómo elegir tu foto y portada, hasta qué escribir en tu descripción, cómo publicar contenido y llegar a más reclutadores.<br />
+            ✅ 50 preguntas de entrevistas laborales frecuentes, cada una con 2 respuestas posibles para que llegues preparado y seguro.<br />
+            💡 Además, contiene consejos extra, tips para destacar y recomendaciones basadas en lo que buscan hoy las empresas en Argentina.<br /><br />
+            Ideal si estás en búsqueda activa o querés actualizar tu estrategia de postulación. ¡Es práctica, concreta y diseñada para ayudarte a conseguir trabajo más rápido!
+          </p>
         </div>
       </section>
 

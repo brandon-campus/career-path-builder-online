@@ -12,6 +12,7 @@ interface ServiceLayoutProps {
   deliveryTime: string;
   paymentMethods: string[];
   features: string[];
+  mainButtonLink: string;
   children?: React.ReactNode;
 }
 
@@ -23,6 +24,7 @@ const ServiceLayout = ({
   deliveryTime,
   paymentMethods,
   features,
+  mainButtonLink,
   children
 }: ServiceLayoutProps) => {
   return (
@@ -59,9 +61,18 @@ const ServiceLayout = ({
               <h1 className="text-4xl md:text-5xl font-bold mb-6">{title}</h1>
               <p className="text-xl mb-8">{description}</p>
               <div className="flex flex-col md:flex-row justify-center gap-4">
-                <Button className="bg-white text-blue-600 hover:bg-gray-100 text-lg py-6 px-8">
-                  <Link to="/contacto">Solicitar servicio</Link>
-                </Button>
+                <a href={mainButtonLink} target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-white text-blue-600 hover:bg-gray-100 text-lg py-6 px-8">
+                    Solicitar servicio
+                  </Button>
+                </a>
+              </div>
+              <div className="flex justify-center mt-4">
+                <a href={`https://wa.me/5491131985450?text=%C2%A1Hola!%20Quiero%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20${encodeURIComponent(title)}`} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="border-green-500 text-green-700 hover:bg-green-50 ml-2">
+                    Hablar por Whatsapp
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -119,9 +130,11 @@ const ServiceLayout = ({
                     </ul>
                   </div>
 
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                    <Link to="/contacto">Solicitar ahora</Link>
-                  </Button>
+                  <a href={mainButtonLink} target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                      Solicitar ahora
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
