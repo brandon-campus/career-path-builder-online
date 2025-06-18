@@ -18,9 +18,9 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-wrap gap-4 mb-8">
             <Button className="bg-primary hover:bg-primary/90 text-white text-lg py-6 px-8 button-glow">
-              <a href="https://tally.so/r/wQW0Wl" target="_blank" rel="noopener noreferrer">
+              <Link to="/servicios/cv-harvard">
                 Quiero armar mi CV
-              </a>
+              </Link>
             </Button>
             <Button variant="ghost" className="text-primary hover:bg-secondary/10 text-lg py-6 px-8" style={{ backgroundColor: 'transparent' }}>
               <Link to="/servicios">Explorar servicios</Link>
@@ -51,7 +51,7 @@ const HeroSection = () => {
         </div>
         <div className="order-1 md:order-2 flex justify-center items-center relative h-96 md:h-auto">
           <img 
-            src="/fotoprincipal.jpg"
+            src="/ChatGPT Image 18 jun 2025, 15_51_25.png"
             alt="Hernan Lamanna sonriendo con los brazos cruzados"
             style={{ width: '100%', maxWidth: '500px' }}
             className="rounded-lg shadow-2xl h-auto relative z-10"

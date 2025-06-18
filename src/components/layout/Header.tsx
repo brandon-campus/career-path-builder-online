@@ -63,9 +63,9 @@ const Header = () => {
               </a>
             </Button>
             <Button className="bg-primary hover:bg-primary/90 text-white button-glow">
-              <a href="https://tally.so/r/wQW0Wl" target="_blank" rel="noopener noreferrer">
+              <Link to="/servicios/cv-harvard">
                 Quiero armar mi CV
-              </a>
+              </Link>
             </Button>
           </div>
 
@@ -138,9 +138,9 @@ const Header = () => {
                 </a>
               </Button>
               <Button className="w-full bg-primary hover:bg-primary/90 text-white button-glow">
-                <a href="https://tally.so/r/wQW0Wl" target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
+                <Link to="/servicios/cv-harvard" onClick={toggleMenu}>
                   Quiero armar mi CV
-                </a>
+                </Link>
               </Button>
             </div>
           </nav>
