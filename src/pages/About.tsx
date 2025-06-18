@@ -140,6 +140,11 @@ const About = () => {
               <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 text-lg py-6 px-8">
                 <Link to="/servicios">Ver todos los servicios</Link>
               </Button>
+              <Button variant="outline" className="border-green-600 text-green-700 hover:bg-green-50 text-lg py-6 px-8">
+                <a href="https://wa.me/5491131985450?text=%C2%A1Hola!%20Quiero%20agendar%20una%20asesor%C3%ADa" target="_blank" rel="noopener noreferrer">
+                  Agenda tu asesoría
+                </a>
+              </Button>
             </div>
           </div>
         </section>

@@ -15,6 +15,7 @@ import CVDiseno from "./pages/services/CVDiseno";
 import LinkedIn from "./pages/services/LinkedIn";
 import ComboCVLinkedIn from "./pages/services/ComboCVLinkedIn";
 import ComboCVPortales from "./pages/services/ComboCVPortales";
+import Asesorias from "./pages/Asesorias";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/servicios/linkedin" element={<LinkedIn />} />
           <Route path="/servicios/combo-cv-linkedin" element={<ComboCVLinkedIn />} />
           <Route path="/servicios/combo-cv-portales" element={<ComboCVPortales />} />
+          <Route path="/asesorias" element={<Asesorias />} />
           <Route path="/cursos" element={<Courses />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/sobre-mi" element={<About />} />
