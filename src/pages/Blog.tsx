@@ -1,5 +1,5 @@
-
 import { useState } from 'react';
+import { blogPosts } from './blogData';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,75 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-
-const blogPosts = [
-  {
-    id: 1,
-    title: '10 errores comunes en el CV que te impiden conseguir entrevistas',
-    excerpt: 'Descubre los fallos más frecuentes que cometen los candidatos y cómo evitarlos para aumentar tus posibilidades de ser seleccionado para una entrevista.',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero vel bibendum lacinia, nisl nisl aliquam nisl, eget aliquam nunc nisl eu lectus.',
-    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    date: '20 Abr 2024',
-    category: 'CV',
-    link: '/blog/errores-cv',
-    readTime: '5 min'
-  },
-  {
-    id: 2,
-    title: 'Cómo destacar en LinkedIn ante los reclutadores',
-    excerpt: 'Estrategias probadas para optimizar tu perfil y aparecer en las búsquedas de oportunidades que realmente te interesan. Aprende qué valoran los reclutadores.',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero vel bibendum lacinia, nisl nisl aliquam nisl, eget aliquam nunc nisl eu lectus.',
-    image: 'https://images.unsplash.com/photo-1616469829581-73993eb86b02?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    date: '12 Abr 2024',
-    category: 'LinkedIn',
-    link: '/blog/destacar-linkedin',
-    readTime: '8 min'
-  },
-  {
-    id: 3,
-    title: 'Preguntas difíciles de entrevista y cómo responderlas con éxito',
-    excerpt: 'Guía completa para dar respuestas impactantes a las preguntas más complicadas que suelen hacer los entrevistadores y dejar una impresión memorable.',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero vel bibendum lacinia, nisl nisl aliquam nisl, eget aliquam nunc nisl eu lectus.',
-    image: 'https://images.unsplash.com/photo-1627556592933-ffe99c1cd9eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    date: '5 Abr 2024',
-    category: 'Entrevistas',
-    link: '/blog/preguntas-entrevista',
-    readTime: '7 min'
-  },
-  {
-    id: 4,
-    title: 'La importancia del networking estratégico para tu carrera',
-    excerpt: 'Descubre cómo construir y mantener una red de contactos profesionales que realmente aporte valor a tu carrera y te abra nuevas oportunidades.',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero vel bibendum lacinia, nisl nisl aliquam nisl, eget aliquam nunc nisl eu lectus.',
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    date: '28 Mar 2024',
-    category: 'Networking',
-    link: '/blog/networking-estrategico',
-    readTime: '6 min'
-  },
-  {
-    id: 5,
-    title: '5 estrategias para negociar un mejor salario',
-    excerpt: 'Técnicas efectivas que te ayudarán a preparar y conducir una negociación salarial exitosa, tanto en un nuevo empleo como en tu puesto actual.',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero vel bibendum lacinia, nisl nisl aliquam nisl, eget aliquam nunc nisl eu lectus.',
-    image: 'https://images.unsplash.com/photo-1563237023-b1e970526dcb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    date: '15 Mar 2024',
-    category: 'Negociación',
-    link: '/blog/negociar-salario',
-    readTime: '9 min'
-  },
-  {
-    id: 6,
-    title: 'Cómo crear una marca personal que te diferencie profesionalmente',
-    excerpt: 'Pasos prácticos para definir y desarrollar una marca personal auténtica y diferenciadora que te ayude a destacar en tu sector profesional.',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero vel bibendum lacinia, nisl nisl aliquam nisl, eget aliquam nunc nisl eu lectus.',
-    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-    date: '2 Mar 2024',
-    category: 'Marca Personal',
-    link: '/blog/marca-personal',
-    readTime: '10 min'
-  }
-];
 
 const Blog = () => {
   const [posts, setPosts] = useState(blogPosts);

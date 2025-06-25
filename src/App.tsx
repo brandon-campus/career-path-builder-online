@@ -16,6 +16,9 @@ import LinkedIn from "./pages/services/LinkedIn";
 import ComboCVLinkedIn from "./pages/services/ComboCVLinkedIn";
 import ComboCVPortales from "./pages/services/ComboCVPortales";
 import Asesorias from "./pages/Asesorias";
+import BlogPost from './pages/BlogPost';
+import { blogPosts } from './pages/blogData';
+import { Analytics } from '@vercel/analytics/react';
 
 const queryClient = new QueryClient();
 
@@ -36,11 +39,20 @@ const App = () => (
           <Route path="/asesorias" element={<Asesorias />} />
           <Route path="/cursos" element={<Courses />} />
           <Route path="/blog" element={<Blog />} />
+          {/* Rutas de artículos individuales del blog */}
+          {blogPosts.map(post => (
+            <Route
+              key={post.link}
+              path={post.link.replace('/blog/', 'blog/')}
+              element={<BlogPost {...post} />}
+            />
+          ))}
           <Route path="/sobre-mi" element={<About />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </TooltipProvider>
   </QueryClientProvider>
 );
