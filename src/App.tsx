@@ -19,6 +19,7 @@ import Asesorias from "./pages/Asesorias";
 import BlogPost from './pages/BlogPost';
 import { blogPosts } from './pages/blogData';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
       <Analytics />
+      <SpeedInsights />
     </TooltipProvider>
   </QueryClientProvider>
 );
