@@ -1,29 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useTheme } from "next-themes";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  const toggleTheme = () => {
-    if (setTheme) {
-      setTheme(theme === 'dark' ? 'light' : 'dark');
-    }
-  };
-
-  const currentTheme = mounted ? theme : 'light';
 
   return (
     <header className="w-full bg-background border-b sticky top-0 z-50">
@@ -50,20 +35,6 @@ const Header = () => {
             <Link to="/contacto" className="font-medium text-foreground hover:text-primary transition-colors">
               Contacto
             </Link>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="h-9 w-9"
-              type="button"
-            >
-              {currentTheme === 'dark' ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-              <span className="sr-only">Cambiar tema</span>
-            </Button>
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -79,22 +50,8 @@ const Header = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button and Theme Toggle */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center space-x-2 md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="h-9 w-9"
-              type="button"
-            >
-              {currentTheme === 'dark' ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-              <span className="sr-only">Cambiar tema</span>
-            </Button>
             <button
               className="p-2 text-foreground hover:text-primary transition-colors"
               onClick={toggleMenu}
