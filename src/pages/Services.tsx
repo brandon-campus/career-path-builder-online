@@ -3,7 +3,7 @@ import Footer from '@/components/layout/Footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { FileText, Linkedin, Users, BookOpen, Calendar } from 'lucide-react';
+import { FileText, Linkedin, Users, BookOpen, Calendar, Gift } from 'lucide-react';
 
 const serviceItems = [
   {
@@ -18,12 +18,12 @@ const serviceItems = [
       'Estructura profesional y prolija'
     ],
     icon: <FileText className="h-12 w-12 text-blue-600" />,
-    price: '$16.000',
-    link: 'https://mpago.li/29HrjUi',
+    price: '$18.000',
+    link: 'https://mpago.li/2NvV5cA',
     buttonText: 'Solicitar servicio',
     deliveryTime: '5 a 7 días hábiles',
     paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil',
-    mainButtonLink: 'https://mpago.li/29HrjUi'
+    mainButtonLink: 'https://mpago.li/2NvV5cA'
   },
   {
     id: 2,
@@ -37,12 +37,12 @@ const serviceItems = [
       'Estructura profesional y visualmente atractiva'
     ],
     icon: <FileText className="h-12 w-12 text-blue-600" />,
-    price: '$17.000',
-    link: 'https://mpago.li/1euBj6a',
+    price: '$20.000',
+    link: 'https://mpago.li/34nz9hp',
     buttonText: 'Solicitar servicio',
     deliveryTime: '5 a 7 días hábiles',
     paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil',
-    mainButtonLink: 'https://mpago.li/1euBj6a'
+    mainButtonLink: 'https://mpago.li/34nz9hp'
   },
   {
     id: 3,
@@ -102,6 +102,23 @@ const serviceItems = [
     deliveryTime: '7 a 10 días hábiles',
     paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil',
     mainButtonLink: 'https://mpago.li/11fUvKR'
+  },
+  {
+    id: 6,
+    title: 'Bonus',
+    description: 'Recursos complementarios para potenciar tu búsqueda laboral. Incluye guías, preguntas de entrevista y tips de LinkedIn.',
+    features: [
+      'Guía de Trabajo 2025 con enlaces a portales y agencias reales',
+      '50 preguntas de entrevista + respuestas',
+      'Tips para optimizar tu perfil de LinkedIn'
+    ],
+    icon: <Gift className="h-12 w-12 text-blue-600" />,
+    price: '$10.000',
+    link: 'https://mpago.li/31Rge4T',
+    buttonText: 'Solicitar bonus',
+    deliveryTime: 'Inmediato',
+    paymentMethods: 'Mercado Pago, transferencia, Rapipago o Pago Fácil',
+    mainButtonLink: 'https://mpago.li/31Rge4T'
   }
 ];
 
@@ -117,6 +134,8 @@ function getServiceDetailLink(title: string) {
       return '/servicios/combo-cv-linkedin';
     case 'Combo: CV + 2 portales de empleo':
       return '/servicios/combo-cv-portales';
+    case 'Bonus':
+      return '/servicios';
     default:
       return '/servicios';
   }

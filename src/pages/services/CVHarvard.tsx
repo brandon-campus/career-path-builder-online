@@ -21,7 +21,7 @@ const CVHarvard = () => {
     <ServiceLayout
       title="CV Profesional TIPO HARVARD"
       description="El CV que abre puertas en empresas y consultoras. Formato internacional, estructura clara y optimizado para sistemas ATS."
-      price="$16.000"
+      price="$18.000"
       deliveryTime="5 a 7 días hábiles"
       paymentMethods={[
         "Mercado Pago",
@@ -36,7 +36,7 @@ const CVHarvard = () => {
         "Formato entregado en Word y PDF",
         "Estructura profesional y prolija"
       ]}
-      mainButtonLink="https://mpago.li/29HrjUi"
+      mainButtonLink="https://mpago.li/2NvV5cA"
     >
       {/* Bloque valor añadido */}
       <section className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-xl mb-12">

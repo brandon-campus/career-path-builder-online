@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,15 +6,24 @@ import { useTheme } from "next-themes";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    if (setTheme) {
+      setTheme(theme === 'dark' ? 'light' : 'dark');
+    }
   };
+
+  const currentTheme = mounted ? theme : 'light';
 
   return (
     <header className="w-full bg-background border-b sticky top-0 z-50">
@@ -46,8 +55,9 @@ const Header = () => {
               size="icon"
               onClick={toggleTheme}
               className="h-9 w-9"
+              type="button"
             >
-              {theme === 'dark' ? (
+              {currentTheme === 'dark' ? (
                 <Sun className="h-5 w-5" />
               ) : (
                 <Moon className="h-5 w-5" />
@@ -76,8 +86,9 @@ const Header = () => {
               size="icon"
               onClick={toggleTheme}
               className="h-9 w-9"
+              type="button"
             >
-              {theme === 'dark' ? (
+              {currentTheme === 'dark' ? (
                 <Sun className="h-5 w-5" />
               ) : (
                 <Moon className="h-5 w-5" />

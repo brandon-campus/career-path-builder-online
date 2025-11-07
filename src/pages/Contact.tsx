@@ -147,6 +147,7 @@ const Contact = () => {
                             <SelectItem value="linkedin">Armado de LinkedIn Profesional</SelectItem>
                             <SelectItem value="combo-cv-linkedin">Combo CV + LinkedIn</SelectItem>
                             <SelectItem value="combo-cv-portales">Combo: CV + 2 portales de empleo</SelectItem>
+                            <SelectItem value="bonus">Bonus</SelectItem>
                             <SelectItem value="otro">Otro</SelectItem>
                           </SelectContent>
                         </Select>

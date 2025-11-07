@@ -58,7 +58,7 @@ const BlogPost = ({ title, date, category, image, content, readTime }: BlogPostP
             <div className="mt-12 flex flex-col items-center">
               <div className="flex items-center gap-3">
                 <img
-                  src="/hernanlamana.jpg"
+                  src="/hernan-lamanna-perfil.jpg"
                   alt="Hernán Lamanna"
                   className="w-14 h-14 rounded-full border-2 border-blue-200 object-cover"
                 />

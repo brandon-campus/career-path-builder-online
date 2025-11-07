@@ -20,7 +20,7 @@ const CVDiseno = () => {
     <ServiceLayout
       title="CV Profesional CON DISEÑO"
       description="CV profesional con diseño moderno y atractivo, perfecto para destacar visualmente en sectores creativos y empresas innovadoras."
-      price="$17.000"
+      price="$20.000"
       deliveryTime="5 a 7 días hábiles"
       paymentMethods={[
         "Mercado Pago",
@@ -35,7 +35,7 @@ const CVDiseno = () => {
         "Formato entregado en PDF con diseño y foto",
         "Estructura profesional y visualmente atractiva"
       ]}
-      mainButtonLink="https://mpago.li/1euBj6a"
+      mainButtonLink="https://mpago.li/34nz9hp"
     >
       {/* Bloque valor añadido */}
       <section className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-xl mb-12">

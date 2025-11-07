@@ -45,13 +45,13 @@ const HeroSection = () => {
               />
             </div>
             <p className="text-foreground text-sm md:text-base">
-              <span className="text-primary font-semibold">+500</span> profesionales han mejorado su carrera con nosotros
+              <span className="text-primary font-semibold">+20.000</span> profesionales han mejorado su carrera con nosotros
             </p>
           </div>
         </div>
         <div className="order-1 md:order-2 flex justify-center items-center relative h-96 md:h-auto">
           <img 
-            src="/ChatGPT Image 18 jun 2025, 15_51_25.png"
+            src="/hernan-lamanna-perfil.jpg"
             alt="Hernan Lamanna sonriendo con los brazos cruzados"
             style={{ width: '100%', maxWidth: '500px' }}
             className="rounded-lg shadow-2xl h-auto relative z-10"
