@@ -24,7 +24,7 @@ const testimonios = [
 ];
 
 const whatsappLink =
-  'https://wa.me/5491131985450?text=Quiero%20agendar%20mi%20asesor%C3%ADa';
+  'https://wa.me/5491123844473?text=Quiero%20agendar%20mi%20asesor%C3%ADa';
 
 const Asesorias = () => {
   return (
@@ -43,7 +43,7 @@ const Asesorias = () => {
             <div className="flex flex-col md:flex-row justify-center gap-4">
               <Button asChild className="bg-white text-blue-600 hover:bg-gray-100 text-lg py-6 px-8">
                 <a
-                  href="https://wa.me/5491131985450?text=%C2%A1Hola!%20Quiero%20agendar%20una%20asesor%C3%ADa"
+                  href="https://wa.me/5491123844473?text=%C2%A1Hola!%20Quiero%20agendar%20una%20asesor%C3%ADa"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

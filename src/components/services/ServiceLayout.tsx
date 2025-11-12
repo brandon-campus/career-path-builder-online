@@ -68,7 +68,7 @@ const ServiceLayout = ({
                 </a>
               </div>
               <div className="flex justify-center mt-4">
-                <a href={`https://wa.me/5491131985450?text=%C2%A1Hola!%20Quiero%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20${encodeURIComponent(title)}`} target="_blank" rel="noopener noreferrer">
+                <a href={`https://wa.me/5491123844473?text=%C2%A1Hola!%20Quiero%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20${encodeURIComponent(title)}`} target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="border-green-500 text-green-700 hover:bg-green-50 ml-2">
                     Hablar por Whatsapp
                   </Button>

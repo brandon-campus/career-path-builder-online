@@ -39,7 +39,7 @@ const Header = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="outline" className="border-primary text-primary hover:bg-secondary/10 button-glow">
-              <a href="https://wa.me/5491131985450?text=%C2%A1Hola!%20Quiero%20agendar%20una%20asesor%C3%ADa" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5491123844473?text=%C2%A1Hola!%20Quiero%20agendar%20una%20asesor%C3%ADa" target="_blank" rel="noopener noreferrer">
                 Agenda tu asesoría
               </a>
             </Button>
@@ -101,7 +101,7 @@ const Header = () => {
             </Link>
             <div className="flex flex-col space-y-2 pt-4">
               <Button variant="outline" className="w-full border-primary text-primary hover:bg-secondary/10 button-glow">
-                <a href="https://wa.me/5491131985450?text=%C2%A1Hola!%20Quiero%20agendar%20una%20asesor%C3%ADa" target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
+                <a href="https://wa.me/5491123844473?text=%C2%A1Hola!%20Quiero%20agendar%20una%20asesor%C3%ADa" target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
                   Agenda tu asesoría
                 </a>
               </Button>
