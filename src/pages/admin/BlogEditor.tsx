@@ -13,6 +13,8 @@ import { ArrowLeft, Save, Upload, X } from 'lucide-react';
 import { toast } from 'sonner';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { AlertCircle } from 'lucide-react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const categories = ['CV', 'LinkedIn', 'Entrevistas', 'Networking', 'Negociación', 'Marca Personal'];
 
@@ -403,18 +405,35 @@ const BlogEditor = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="content">Contenido HTML *</Label>
-                <Textarea
-                  id="content"
-                  value={formData.content}
-                  onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                  placeholder="Contenido del artículo en HTML"
-                  rows={15}
-                  className="font-mono text-sm"
-                  required
-                />
+                <Label htmlFor="content">Contenido del artículo *</Label>
+                <div className="bg-white rounded-md">
+                  <ReactQuill
+                    theme="snow"
+                    value={formData.content}
+                    onChange={(value) => setFormData({ ...formData, content: value })}
+                    placeholder="Escribe el contenido de tu artículo aquí..."
+                    modules={{
+                      toolbar: [
+                        [{ 'header': [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        [{ 'color': [] }, { 'background': [] }],
+                        ['link'],
+                        ['clean']
+                      ],
+                    }}
+                    formats={[
+                      'header',
+                      'bold', 'italic', 'underline', 'strike',
+                      'list', 'bullet',
+                      'color', 'background',
+                      'link'
+                    ]}
+                    style={{ minHeight: '300px' }}
+                  />
+                </div>
                 <p className="text-xs text-gray-500">
-                  Escribe el contenido en HTML. Puedes usar etiquetas como &lt;p&gt;, &lt;strong&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, etc.
+                  Usa la barra de herramientas para formatear el texto. Puedes hacer negrita, cursiva, listas, enlaces, etc.
                 </p>
               </div>
             </CardContent>
