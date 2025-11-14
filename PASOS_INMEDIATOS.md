@@ -125,4 +125,3 @@ Una vez que completes estos 4 pasos, el blog estará completamente funcional y H
 **¿Necesitas ayuda?** Revisa el archivo `CHECKLIST_SUPABASE.md` para más detalles.
 
 
-
