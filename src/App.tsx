@@ -17,7 +17,9 @@ import ComboCVLinkedIn from "./pages/services/ComboCVLinkedIn";
 import ComboCVPortales from "./pages/services/ComboCVPortales";
 import Asesorias from "./pages/Asesorias";
 import BlogPost from './pages/BlogPost';
-import { blogPosts } from './pages/blogData';
+import Login from './pages/admin/Login';
+import BlogAdmin from './pages/admin/BlogAdmin';
+import BlogEditor from './pages/admin/BlogEditor';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
@@ -40,14 +42,13 @@ const App = () => (
           <Route path="/asesorias" element={<Asesorias />} />
           <Route path="/cursos" element={<Courses />} />
           <Route path="/blog" element={<Blog />} />
-          {/* Rutas de artículos individuales del blog */}
-          {blogPosts.map(post => (
-            <Route
-              key={post.link}
-              path={post.link.replace('/blog/', 'blog/')}
-              element={<BlogPost {...post} />}
-            />
-          ))}
+          {/* Ruta dinámica para artículos individuales del blog */}
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          {/* Rutas de administración */}
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/blog" element={<BlogAdmin />} />
+          <Route path="/admin/blog/new" element={<BlogEditor />} />
+          <Route path="/admin/blog/edit/:id" element={<BlogEditor />} />
           <Route path="/sobre-mi" element={<About />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
