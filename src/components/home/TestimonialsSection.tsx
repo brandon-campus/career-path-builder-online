@@ -34,12 +34,13 @@ const TestimonialsSection = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setSlidesToShow(1);
-      } else if (window.innerWidth < 1024) {
+      // Mobile-first: empezar desde móvil y escalar hacia arriba
+      if (window.innerWidth >= 1024) {
+        setSlidesToShow(3);
+      } else if (window.innerWidth >= 640) {
         setSlidesToShow(2);
       } else {
-        setSlidesToShow(3);
+        setSlidesToShow(1);
       }
     };
     handleResize();
@@ -108,27 +109,27 @@ const TestimonialsSection = () => {
   }, [dragStart, zoomed]);
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-800">Lo que dicen nuestros clientes</h2>
-          <p className="text-lg text-gray-600">
+    <section className="py-8 sm:py-12 md:py-16 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-blue-800">Lo que dicen nuestros clientes</h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600">
             Historias reales de profesionales que han transformado su carrera con nuestros servicios.
           </p>
         </div>
-        <div className="relative overflow-hidden px-4">
+        <div className="relative overflow-hidden px-2 sm:px-4">
           <div className="flex transition-transform duration-300 ease-out"
             style={{ transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)` }}>
             {testimonialImages.map((img, idx) => (
               <div
                 key={idx}
-                className="min-w-[calc(100%/3)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)] px-4 flex justify-center"
+                className="min-w-full sm:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)] px-2 sm:px-4 flex justify-center"
                 style={{ maxWidth: '400px' }}
               >
                 <img
                   src={img}
                   alt={`Testimonio ${idx + 1}`}
-                  className="rounded-xl shadow-md object-cover w-full h-80 cursor-pointer hover:scale-105 transition-transform"
+                  className="rounded-xl shadow-md object-cover w-full h-64 sm:h-72 md:h-80 cursor-pointer hover:scale-105 transition-transform"
                   loading="lazy"
                   onClick={() => openModal(img)}
                 />
@@ -138,18 +139,20 @@ const TestimonialsSection = () => {
           <Button
             variant="outline"
             size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 rounded-full bg-white shadow-md z-10"
+            className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 rounded-full bg-white shadow-md z-10 h-8 w-8 sm:h-10 sm:w-10"
             onClick={prevSlide}
+            aria-label="Testimonio anterior"
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
           </Button>
           <Button
             variant="outline"
             size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-white shadow-md z-10"
+            className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 rounded-full bg-white shadow-md z-10 h-8 w-8 sm:h-10 sm:w-10"
             onClick={nextSlide}
+            aria-label="Siguiente testimonio"
           >
-            <ArrowRight className="h-5 w-5" />
+            <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
           </Button>
         </div>
       </div>

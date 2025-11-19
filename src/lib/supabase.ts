@@ -52,4 +52,32 @@ export interface BlogPostUpdate {
   slug?: string;
 }
 
+// Tipos para las categorías del blog
+export interface BlogCategory {
+  id: string;
+  name: string;
+  slug: string;
+  description: string | null;
+  order_index: number;
+  active: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface BlogCategoryInsert {
+  name: string;
+  slug: string;
+  description?: string;
+  order_index?: number;
+  active?: boolean;
+}
+
+export interface BlogCategoryUpdate {
+  name?: string;
+  slug?: string;
+  description?: string;
+  order_index?: number;
+  active?: boolean;
+}
+
 

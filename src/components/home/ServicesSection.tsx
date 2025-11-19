@@ -52,29 +52,29 @@ const TiktokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const ServicesSection = () => {
   return (
-    <section className="py-16 bg-white" id="servicios">
-      <div className="container mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-800">Nuestros Servicios</h2>
-          <p className="text-lg text-gray-600">
+    <section className="py-8 sm:py-12 md:py-16 bg-white" id="servicios">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-blue-800">Nuestros Servicios</h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600">
             Soluciones profesionales diseñadas para potenciar tu perfil y maximizar tus oportunidades laborales.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {serviceItems.map((service, index) => (
             <Card key={service.id} className="border border-gray-200 transition-all duration-300 hover:shadow-lg h-full flex flex-col">
-              <CardHeader>
-                <div className="mb-4">{service.icon}</div>
-                <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+              <CardHeader className="p-4 sm:p-6">
+                <div className="mb-3 sm:mb-4">{service.icon}</div>
+                <CardTitle className="text-lg sm:text-xl font-bold">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">
-                <CardDescription className="text-gray-600 text-base">
+              <CardContent className="flex-grow p-4 sm:p-6 pt-0">
+                <CardDescription className="text-sm sm:text-base text-gray-600">
                   {service.description}
                 </CardDescription>
               </CardContent>
-              <CardFooter>
-                <Button variant="ghost" className="text-blue-600 hover:text-blue-800 p-0 flex items-center group">
+              <CardFooter className="p-4 sm:p-6 pt-0">
+                <Button variant="ghost" className="text-blue-600 hover:text-blue-800 p-0 flex items-center group text-sm sm:text-base">
                   <Link to={service.link} className="flex items-center">
                     Ver detalles
                     <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
@@ -85,8 +85,8 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button className="bg-blue-600 hover:bg-blue-700 button-blue-glow">
+        <div className="text-center mt-8 sm:mt-10 md:mt-12">
+          <Button className="bg-blue-600 hover:bg-blue-700 button-blue-glow text-sm sm:text-base py-5 sm:py-6 px-6 sm:px-8">
             <Link to="/servicios">Ver todos los servicios</Link>
           </Button>
         </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
+import { useBlogCategories } from '@/hooks/useBlogCategories';
 import { supabase, BlogPost, BlogPostInsert, BlogPostUpdate } from '@/lib/supabase';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -16,20 +17,19 @@ import { AlertCircle } from 'lucide-react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-const categories = ['CV', 'LinkedIn', 'Entrevistas', 'Networking', 'Negociación', 'Marca Personal'];
-
 const BlogEditor = () => {
   const { id } = useParams<{ id: string }>();
   const isEditing = !!id;
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
+  const { categories, loading: categoriesLoading } = useBlogCategories(false); // Obtener todas las categorías (activas e inactivas)
 
   const [formData, setFormData] = useState({
     title: '',
     excerpt: '',
     content: '',
     image_url: '',
-    category: 'CV',
+    category: '',
     link: '',
     slug: '',
     date: new Date().toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' }),
@@ -40,6 +40,16 @@ const BlogEditor = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
+
+  // Establecer categoría por defecto cuando se cargan las categorías
+  useEffect(() => {
+    if (categories.length > 0 && !formData.category) {
+      const firstActiveCategory = categories.find(cat => cat.active) || categories[0];
+      if (firstActiveCategory) {
+        setFormData(prev => ({ ...prev, category: firstActiveCategory.name }));
+      }
+    }
+  }, [categories]);
 
   useEffect(() => {
     if (!authLoading && !user) {
@@ -291,21 +301,33 @@ const BlogEditor = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="category">Categoría *</Label>
-                  <Select
-                    value={formData.category}
-                    onValueChange={(value) => setFormData({ ...formData, category: value })}
-                  >
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {categories.map((cat) => (
-                        <SelectItem key={cat} value={cat}>
-                          {cat}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  {categoriesLoading ? (
+                    <Input disabled placeholder="Cargando categorías..." />
+                  ) : (
+                    <Select
+                      value={formData.category}
+                      onValueChange={(value) => setFormData({ ...formData, category: value })}
+                      disabled={categories.length === 0}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder={categories.length === 0 ? "No hay categorías disponibles" : "Selecciona una categoría"} />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {categories
+                          .filter(cat => cat.active) // Solo mostrar categorías activas
+                          .map((cat) => (
+                            <SelectItem key={cat.id} value={cat.name}>
+                              {cat.name}
+                            </SelectItem>
+                          ))}
+                      </SelectContent>
+                    </Select>
+                  )}
+                  {categories.length === 0 && !categoriesLoading && (
+                    <p className="text-xs text-red-500">
+                      No hay categorías disponibles. Por favor, crea categorías en Supabase primero.
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-2">

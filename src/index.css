@@ -134,3 +134,141 @@
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
 }
+
+/* Estilos Mobile First para Blog */
+/* Scroll horizontal suave para categorías en móvil */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  height: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 2px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* Mejorar line-clamp para excerpt */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Estilos Mobile First para contenido de artículos del blog */
+.prose {
+  /* Imágenes responsivas */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+  }
+
+  /* Tablas responsivas con scroll horizontal */
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1rem 0;
+  }
+
+  table thead,
+  table tbody {
+    display: table;
+    width: 100%;
+    min-width: 500px;
+  }
+
+  /* Bloques de código */
+  pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  code {
+    font-size: 0.875rem;
+    word-break: break-word;
+  }
+
+  /* Citas */
+  blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+  }
+
+  /* Listas con mejor espaciado en móvil */
+  ul, ol {
+    padding-left: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Enlaces con mejor break en móvil */
+  a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Videos responsivos */
+  iframe,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Separadores */
+  hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+  }
+}
+
+/* Ajustes específicos para móvil */
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1rem;
+    }
+
+    blockquote {
+      margin: 1.5rem 0;
+      padding-left: 0.75rem;
+    }
+  }
+}
